@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :responses
   end
 
-  authenticate :users do
+  authenticate :user do
     namespace :admin do
       resources :questions
     end
