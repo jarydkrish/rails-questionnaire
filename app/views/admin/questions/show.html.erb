@@ -1,4 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="">
+  <p class="lead">
+    <%= @question.question %>
+  </p>
+  <br />
+  <p>
+    <strong>Short Answer Placeholder:</strong>
+  </p>
+  <p>
+    <%= @question.short_answer_placeholder %>
+  </p>
+  <p>
+    <strong>Explanation:</strong>
+  </p>
+  <p>
+    <%= @question.explanation %>
+  </p>
+</div>
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+<%= link_to 'Edit', edit_admin_question_path(@question) %> |
+<%= link_to 'Back', admin_questions_path %>
