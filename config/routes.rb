@@ -6,9 +6,14 @@ Rails.application.routes.draw do
   }
 
   resources :questions, only: [:index, :show] do
-    resources :responses
+    resources :answers
   end
 
+  devise_scope :user do
+    namespace :admin do
+      get 'sign_in', to: 'devise/sessions#new'
+    end
+  end
   authenticate :user do
     namespace :admin do
       resources :questions

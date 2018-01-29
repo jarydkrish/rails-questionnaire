@@ -1,17 +1,16 @@
-<h1>Questions</h1>
+<div class="jumbotron">
+  <h1>Questions</h1>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= link_to 'Show', question_responses %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="card-deck">
+  <% @questions.each do |question, index| %>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Question #<%= index %></h5>
+        <p class="card-text"><%= question.question %></p>
+        <%= link_to 'See Responses', question_answers_path(question) %>
+        <%= link_to 'Add Response', new_question_answer_path(question) %>
+      </div>
+    </div>
+  <% end %>
+</div>
