@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  resources :questions, only: [:index, :show]
+  resources :questions, only: [:index, :show] do
+    resources :responses
+  end
 
   authenticate :users do
     namespace :admin do

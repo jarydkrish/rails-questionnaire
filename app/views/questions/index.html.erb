@@ -10,12 +10,8 @@
   <tbody>
     <% @questions.each do |question| %>
       <tr>
-        <td><%= link_to 'Show', question %></td>
+        <td><%= link_to 'Show', question_responses %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Question', new_question_path %>
