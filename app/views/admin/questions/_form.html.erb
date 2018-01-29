@@ -11,12 +11,20 @@
     </div>
   <% end %>
   <div class="form-group">
+    <%= form.label(:question, "Question") %>
+    <%= form.text_area(:question, class: 'form-control') %>
+  </div>
+  <div class="form-group">
+    <%= form.label(:short_answer_label, "Short Answer Label") %>
+    <%= form.text_field(:short_answer_label, class: 'form-control') %>
+  </div>
+  <div class="form-group">
     <%= form.label(:short_answer_placeholder, "Short Answer Placeholder") %>
     <%= form.text_field(:short_answer_placeholder, class: 'form-control') %>
   </div>
   <div class="form-group">
-    <%= form.label(:question, "Question") %>
-    <%= form.text_area(:question, class: 'form-control') %>
+    <%= form.label(:answer_label, "Short Answer Label") %>
+    <%= form.text_field(:answer_label, class: 'form-control') %>
   </div>
 
 

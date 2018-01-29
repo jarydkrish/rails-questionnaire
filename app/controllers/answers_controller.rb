@@ -69,7 +69,7 @@ class AnswersController < ApplicationController
     end
 
     def set_question
-      @question = Question.where(id: params[:question_id])
+      @question = Question.where(id: params[:question_id]).first
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

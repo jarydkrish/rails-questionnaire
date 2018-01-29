@@ -3,13 +3,13 @@
 </div>
 
 <div class="card-deck">
-  <% @questions.each do |question, index| %>
+  <% @questions.each_with_index do |question, index| %>
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Question #<%= index %></h5>
+        <h5 class="card-title">Question #<%= index + 1 %></h5>
         <p class="card-text"><%= question.question %></p>
-        <%= link_to 'See Responses', question_answers_path(question) %>
-        <%= link_to 'Add Response', new_question_answer_path(question) %>
+        <%= link_to 'Responses', question_answers_path(question), { class: 'btn btn-secondary' } %>
+        <%= link_to 'Add Response', new_question_answer_path(question), { class: 'btn btn-primary' } %>
       </div>
     </div>
   <% end %>

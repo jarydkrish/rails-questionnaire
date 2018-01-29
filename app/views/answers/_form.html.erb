@@ -10,6 +10,15 @@
       </ul>
     </div>
   <% end %>
+  <div class="form-group">
+    <%= form.label(:short_answer, @question.short_answer_label || "Short Answer") %>
+    <%= form.text_field(:short_answer, class: 'form-control', placeholder: @question.short_answer_placeholder) %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label(:short_answer, @question.answer_label || "Answer") %>
+    <%= form.text_area(:answer, class: 'form-control') %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
