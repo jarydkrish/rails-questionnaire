@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180129155525) do
+ActiveRecord::Schema.define(version: 20180202202714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,15 +24,14 @@ ActiveRecord::Schema.define(version: 20180129155525) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.text "question"
-    t.string "short_answer_placeholder"
-    t.text "explanation"
+  create_table "categories", force: :cascade do |t|
+    t.text "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "short_answer_label"
-    t.string "answer_label"
   end
+
+# Could not dump table "questions" because of following StandardError
+#   Unknown type 'categories' for column 'references'
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
