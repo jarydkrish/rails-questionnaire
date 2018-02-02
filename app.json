@@ -3,7 +3,7 @@
   "description": "A simple questionnaire application.",
   "repository": "https://github.com/jarydkrish/questionnaire",
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate && "
+    "postdeploy": "bundle exec rake db:migrate"
   },
   "env": {
     "RAILS_ENV": "production",
